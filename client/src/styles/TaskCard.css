@@ -1,0 +1,115 @@
+.task-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.task-card:hover {
+  border-color: #475569;
+  background: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.task-card.completed {
+  opacity: 0.7;
+  border-color: #16a34a;
+}
+
+.task-card.overdue {
+  border-color: #dc2626;
+  background: #7f1d1d;
+}
+
+.task-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-title-completed {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.task-description {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+.task-footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.task-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.category-study {
+  background: #1e40af;
+  color: #93c5fd;
+}
+
+.category-office {
+  background: #7c3aed;
+  color: #d8b4fe;
+}
+
+.category-gym {
+  background: #dc2626;
+  color: #fca5a5;
+}
+
+.task-due-date {
+  color: #cbd5e1;
+}
+
+.task-due-date.overdue-text {
+  color: #fca5a5;
+  font-weight: 600;
+}
