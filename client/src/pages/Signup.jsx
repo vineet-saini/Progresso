@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import { useAuth } from "../hooks/useAuth"
+import API_URL from "../config/api"
 import "../styles/Auth.css"
 
 export default function Signup() {
@@ -27,7 +28,7 @@ export default function Signup() {
     setLoading(true)
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/signup", {
+      const response = await axios.post(`${API_URL}/auth/signup`, {
         name,
         email,
         password,
@@ -45,7 +46,7 @@ export default function Signup() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1>TaskFlow</h1>
+        <h1>Progresso</h1>
         <h2>Create Account</h2>
 
         {error && <div className="error-message">{error}</div>}

@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/dashboard" className="navbar-logo">
-          TaskFlow
+          Progresso
         </Link>
         <div className="nav-menu">
           <Link to="/dashboard" className="nav-link">

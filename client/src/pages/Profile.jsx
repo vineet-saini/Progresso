@@ -4,6 +4,7 @@ import axios from "axios"
 import Navbar from "../components/Navbar"
 import { useAuth } from "../hooks/useAuth"
 import { useTasks } from "../hooks/useTasks"
+import API_URL from "../config/api"
 import "../styles/Profile.css"
 
 export default function Profile() {
@@ -30,7 +31,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/categories", {
+        const response = await axios.get(`${API_URL}/users/categories`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setCategories(response.data.categories || [])
@@ -51,7 +52,7 @@ export default function Profile() {
 
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/users/profile",
+        `${API_URL}/users/profile`,
         { name },
         {
           headers: {
@@ -75,7 +76,7 @@ export default function Profile() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/categories",
+        `${API_URL}/users/categories`,
         { category: newCategory.trim() },
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -97,7 +98,7 @@ export default function Profile() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/users/categories/${encodeURIComponent(category)}`,
+        `${API_URL}/users/categories/${encodeURIComponent(category)}`,
         { headers: { Authorization: `Bearer ${token}` } },
       )
       setCategories(response.data.categories)

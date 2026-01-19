@@ -4,6 +4,7 @@ import axios from "axios"
 import Navbar from "../components/Navbar"
 import ProgressBar from "../components/ProgressBar"
 import { useAuth } from "../hooks/useAuth"
+import API_URL from "../config/api"
 import "../styles/Reports.css"
 
 export default function Reports() {
@@ -14,7 +15,7 @@ export default function Reports() {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/report", {
+        const response = await axios.get(`${API_URL}/users/report`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

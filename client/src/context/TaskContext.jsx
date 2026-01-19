@@ -3,6 +3,7 @@
 import { createContext, useState, useCallback } from "react"
 import axios from "axios"
 import { useAuth } from "../hooks/useAuth"
+import API_URL from "../config/api"
 
 export const TaskContext = createContext()
 
@@ -12,7 +13,7 @@ export function TaskProvider({ children }) {
   const { token } = useAuth()
 
   const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: API_URL,
     headers: {
       Authorization: `Bearer ${token}`,
     },
